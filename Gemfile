@@ -63,3 +63,6 @@ group :development do
   gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false
 end
+
+# Haml templates
+gem 'haml-rails', '~> 2.0'

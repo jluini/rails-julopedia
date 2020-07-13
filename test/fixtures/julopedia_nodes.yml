@@ -1,0 +1,28 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+cbc:
+  id: 1
+  parent_id:
+  ordering: -1
+  name: cbc
+  kind: section
+  title: Materias del CBC
+  content: 
+
+biofisica:
+  id: 2
+  parent_id: 1
+  ordering: 1
+  name: biofisica
+  kind: subject
+  title: Biofísica CBC
+  content: Contenido de biofísica...
+
+mecanica:
+  id: 3
+  parent_id: 2
+  ordering: 1
+  name: mecanica
+  kind: section
+  title: "Unidad 1: mecánica"
+  content: Contenido de mecánica...

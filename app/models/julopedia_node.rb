@@ -4,16 +4,7 @@
 # Julopedia node.
 #
 class JulopediaNode < ApplicationRecord
-  # Node
-  belongs_to :parent, class_name: :JulopediaNode,
-                      optional: true,
-                      inverse_of: :children
-  has_many :children, class_name: :JulopediaNode,
-                      dependent: :nullify,
-                      foreign_key: :parent_id,
-                      inverse_of: :parent
-  validates :ordering, presence: true # integer
-  validates :ordering, presence: true # integer
+  include Node
   
   # NamedNode
   validates :name, presence: true # string

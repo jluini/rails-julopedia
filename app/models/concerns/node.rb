@@ -5,7 +5,7 @@
 #
 module Node
   def self.included(base)
-    base.extend(ClassMethods)
+    # base.extend(ClassMethods)
     base.class_eval do
       belongs_to :parent, class_name: :JulopediaNode,
                           optional: true,
@@ -19,9 +19,9 @@ module Node
   end
   
   # Class methods
-  module ClassMethods
-    # ...
-  end
+  # module ClassMethods
+  #   # ...
+  # end
   
   # Instance methods
   

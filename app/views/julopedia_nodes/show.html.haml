@@ -1,0 +1,17 @@
+%h1 Detalle de nodo #{@node.id}
+
+%p
+  %strong Nombre:
+  '#{@node.name}'
+%p
+  %strong Tipo:
+  '#{@node.kind}'
+%p
+  %strong Título:
+  '#{@node.title}'
+%p
+  %strong Contenido:
+  '#{@node.content}'
+
+= link_to 'Edit', edit_julopedia_node_path(@node)
+= link_to 'Back', julopedia_nodes_path

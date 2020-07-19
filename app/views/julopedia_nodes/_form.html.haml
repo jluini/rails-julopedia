@@ -1,0 +1,24 @@
+= form_with model: @node, local: true do |form|
+  - if @node.errors.any?
+    %div#error_explanation
+      %h2
+        = pluralize(@node.errors.count, "error")
+        prohibited this node from being saved:
+      %ul
+        - @node.errors.full_messages.each do |msg|
+          %li= msg
+
+  %div
+    = form.label :name
+    = form.text_field :name
+  %div
+    = form.label :kind
+    = form.text_field :kind
+  %div
+    = form.label :title
+    = form.text_field :title
+  %div
+    = form.label :content
+    = form.text_area :content
+  %div
+    = form.submit

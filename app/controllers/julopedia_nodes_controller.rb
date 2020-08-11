@@ -49,6 +49,11 @@ class JulopediaNodesController < ApplicationController
     redirect_to julopedia_nodes_path
   end
   
+  # View all nodes as a tree
+  def tree
+    @listing = JuloTree::Listings::TreeListing.new(nil)
+  end
+  
   private
   
   def node_params

@@ -1,0 +1,13 @@
+%h1 JulopediaNodes#tree
+%p Find me in app/views/julopedia_nodes/tree.html.haml
+
+%table
+  %tr
+    %th Level
+    %th Name
+  - @listing.list.each do |entry|
+    %tr
+      %td= entry.level
+      %td= entry.node.name
+
+

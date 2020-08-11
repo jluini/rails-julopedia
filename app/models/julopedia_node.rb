@@ -23,6 +23,12 @@ class JulopediaNode < ApplicationRecord
     new_instance
   end
   
+  def self.create_with_defaults(attributes = {})
+    attributes.reverse_merge! default_attributes
+    new_instance = create attributes
+    new_instance
+  end
+  
   def self.default_attributes
     {
       parent: nil,

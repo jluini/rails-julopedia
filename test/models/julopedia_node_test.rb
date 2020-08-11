@@ -35,8 +35,13 @@ class JulopediaNodeTest < ActiveSupport::TestCase
       title: 'node_title',
       content: 'node_content'
     )
+    
+    assert_equal false, node.persisted?
+    
     save_result = node.save
     assert save_result, 'Should save the node'
+    
+    assert_equal true, node.persisted?
     
     assert_nil node.parent
     assert_equal MINUS_ONE, node.ordering
@@ -46,6 +51,17 @@ class JulopediaNodeTest < ActiveSupport::TestCase
     assert_equal 'section', node.kind
     assert_equal 'node_title', node.title
     assert_equal 'node_content', node.content
+  end
+  
+  test 'can create a valid node' do
+    node = JulopediaNode.create_with_defaults(
+      name: 'node_name',
+      kind: 'section',
+      title: 'node_title',
+      content: 'node_content'
+    )
+    
+    assert_equal true, node.persisted?
   end
   
   test 'fixture nodes' do

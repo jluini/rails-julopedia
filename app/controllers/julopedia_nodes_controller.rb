@@ -51,7 +51,13 @@ class JulopediaNodesController < ApplicationController
   
   # View all nodes as a tree
   def tree
-    @listing = JuloTree::Listings::TreeListing.new(nil)
+    @listing = JuloTree::TreeListing.new(nil)
+  end
+  
+  def tree2
+    walker = JuloTree::TreeWalker.new(nil, JuloTree::PruVisitor.new)
+    
+    render html: walker.walk.html_safe # rubocop:disable Rails/OutputSafety
   end
   
   private
